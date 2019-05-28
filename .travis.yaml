@@ -9,3 +9,5 @@ deploy:
   keep_history: true,
   on:
     branch: master
+before_install:
+  - nvm install node
