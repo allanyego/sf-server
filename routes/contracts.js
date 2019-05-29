@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Controller = require('./controllers/Contracts/index');
+var Controller = require('./Controllers/Contracts/index');
 
 /* GET by talent. */
 router.get('/talents/:_id', function(req, res, next) {
