@@ -9,8 +9,6 @@ var debug = require('debug')('sf-server:server');
 var http = require('http');
 var mongoose = require('mongoose');
 
-var config = require('../config/index');
-
 /**
  * Get port from environment and store in Express.
  */
