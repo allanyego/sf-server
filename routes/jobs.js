@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Controller = require('./controllers/Job/index');
+var Controller = require('./Controllers/Job/index');
 
 /* GET all jobs. */
 router.get('/', function(req, res, next) {
