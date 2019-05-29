@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Controller = require('./controllers/Talent/index');
+var Controller = require('./Controllers/Talent/index');
 
 /* GET all talents. */
 router.get('/', function(req, res, next) {
