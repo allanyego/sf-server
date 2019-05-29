@@ -1,6 +1,6 @@
 var express = require('express'),
 	router = express.Router(),
-	Controller = require('./controllers/Client/index');
+	Controller = require('./Controllers/Client/index');
 
 /* GET all client */
 router.get('/', function(req, res, next) {
