@@ -9,7 +9,7 @@ router.post('/', function(req, res, next) {
 });
 
 /* Authenticate user */
-router.post('/auth', function(req, res, next) {
+router.get('/auth', function(req, res, next) {
 	res.json({
 		status: 'success',
 		result: 'Authenticated.'
