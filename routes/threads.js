@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Controller = require('./controllers/Thread/index');
+var Controller = require('./Controllers/Thread/index');
 
 /* GET threads by user. */
 router.get('/:_id', function(req, res, next) {
