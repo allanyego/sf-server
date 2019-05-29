@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Controller = require('./controllers/Review/index');
+var Controller = require('./Controllers/Review/index');
 
 /* GET reviews by user. */
 router.get('/:_id', function(req, res, next) {
