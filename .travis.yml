@@ -11,3 +11,5 @@ deploy:
     branch: master
 before_install:
   - nvm install node
+install:
+  - travis_wait mvn install
