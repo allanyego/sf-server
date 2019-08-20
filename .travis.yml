@@ -15,4 +15,4 @@ deploy:
   provider: heroku
   api_key:
     secure: $HEROKU_KEY
-
+install: travis_wait 50
