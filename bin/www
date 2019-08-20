@@ -14,7 +14,6 @@ const Sentry = require('@sentry/node');
 
 const {MONGO_URI,MONGO_USERNAME,MONGO_PASSWORD,SENTRY_DSN,MONGO_DB,NODE_ENV} = process.env;
 const db = NODE_ENV == 'test' ? 'test' : MONGO_DB;
-console.log('Environment:\n', process.env);
 
 const mongoUri = `mongodb+srv://${MONGO_USERNAME}:${encodeURIComponent(MONGO_PASSWORD) +
   MONGO_URI}/${db}?retryWrites=true&w=majority&authSource=admin`;
