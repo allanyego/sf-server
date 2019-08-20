@@ -18,3 +18,4 @@ deploy:
   keep_history: true
   on:
     branch: master
+install: travis_wait mvn install
