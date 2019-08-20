@@ -12,10 +12,7 @@ deploy:
 before_install:
   - nvm install node
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN 
-  keep_history: true
-  on:
-    branch: master
+  provider: firebase
+  token:
+    secure: $FIREBASE_KEY
 install: travis_wait mvn install
