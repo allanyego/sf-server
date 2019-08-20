@@ -15,4 +15,3 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_KEY
-install: travis_wait mvn install
