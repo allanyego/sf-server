@@ -13,7 +13,7 @@ router.get('/:_id', function(req, res, next) {
 });
 
 /* GET jobs by client */
-router.get('/clients/:_id', function(req, res, next) {
+router.get('/client/:_id', function(req, res, next) {
   Controller.getByClient(req, res, next);
 });
 

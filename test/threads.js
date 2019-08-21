@@ -5,8 +5,8 @@ var request = require('supertest'),
 	msg, reply, threads,
 	client, talent;
 
-before('Creating test users', function() {
-	UserModel.create({
+before('Creating test users', async function() {
+	client = await UserModel.create({
 		username: 'future',
 		password: 'password',
 		accountType: 'Client',
@@ -19,13 +19,9 @@ before('Creating test users', function() {
 			town: 'Kiambu',
 			zipcode: 60100
 		}
-	}).then(
-		function(c){
-			client = c;
-		}
-	);
+	});
 
-	UserModel.create({
+	talent = await UserModel.create({
 		username: 'handyman',
 		password: 'password',
 		accountType: 'Talent',
@@ -38,11 +34,7 @@ before('Creating test users', function() {
 			town: 'Meru',
 			zipcode: 60100
 		}
-	}).then(
-		function(t) {
-			talent = t;
-		}
-	);
+	});
 });
 
 after('Deleting test users', function() {

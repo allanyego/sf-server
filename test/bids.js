@@ -74,13 +74,13 @@ after('Deleting test users and job', function() {
 
 	JobModel.findByIdAndDelete(job._id).
 		then(
-			function(opRes) {
+			function(_opRes) {
 				console.log('Test job deleted');
 			}
 		);
 	BidModel.findByIdAndDelete(bid._id).
 		then(
-			function(opRes) {
+			function(_opRes) {
 				console.log('Test bid deleted');
 			}
 		);

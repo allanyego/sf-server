@@ -48,7 +48,7 @@ describe('Talents', function() {
 
 
 	describe('#GET by _id', function() {
-		it('responds with talent by _id or no talent', function(done) {
+		it('responds with talent by _id', function(done) {
 			request(server).
 				get('/talents/' + talent._id).
 				expect('Content-Type', /json/).

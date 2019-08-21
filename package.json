@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "mocha ./test/*.js --timeout 10000 --recursive"
+    "test": "NODE_ENV=test mocha ./test/*.js --timeout 10000 --recursive"
   },
   "dependencies": {
     "@okta/jwt-verifier": "0.0.15",
+    "@sentry/node": "^5.6.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
     "express": "~4.16.0",
     "mongoose": "^5.4.13",
     "morgan": "~1.9.0"
