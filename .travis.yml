@@ -11,3 +11,9 @@ deploy:
     branch: master
 before_install:
   - nvm install node
+env:
+  - SENTRY_DSN=SENTRY_DSN
+  - MONGO_PASSWORD=MONGO_PASSWORD
+  - MONGO_USERNAME=MONGO_USERNAME
+  - MONGO_URI=MONGO_URI
+  - MONGO_DB=MONGO_DB
