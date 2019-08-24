@@ -15,5 +15,6 @@ deploy:
   provider: heroku
   api_key:
     secure: $HEROKU_KEY
+  app: smart-fundi-server
 script: 
   - travis_wait 40
