@@ -44,7 +44,7 @@ server.on('listening', onListening);
  */
 const connectMongo = async () => {
   try {
-    await mongoose.connect(mongoUri, {useNewUrlParser: true/*, dbName: MONGO_DB || 'test'*/});
+    await mongoose.connect(mongoUri, {useNewUrlParser: true});
   } catch(err) {
     console.log("Mongoose error:", err);
     throw err;
