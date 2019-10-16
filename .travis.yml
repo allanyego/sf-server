@@ -5,15 +5,16 @@ cache: npm
 deploy:
   provide: pages,
   skip_cleanup: true,
-  github_token: GITHUB_TOKEN,
+  github_token: $GITHUB_TOKEN,
   keep_history: true,
   on:
     branch: master
 before_install:
   - nvm install node
-env:
-  - SENTRY_DSN=SENTRY_DSN
-  - MONGO_PASSWORD=MONGO_PASSWORD
-  - MONGO_USERNAME=MONGO_USERNAME
-  - MONGO_URI=MONGO_URI
-  - MONGO_DB=MONGO_DB
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_KEY
+  app: smart-fundi-server
+script: 
+  - travis_wait 40

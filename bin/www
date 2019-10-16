@@ -50,7 +50,6 @@ const connectMongo = async () => {
     throw err;
   }
 };
-console.log(mongoUri);
 connectMongo();
 
 
