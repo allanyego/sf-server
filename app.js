@@ -15,7 +15,8 @@ var threads = require('./routes/threads');
 
 
 var app = express();
-
+app.set('views', '/views');
+app.set('view-engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,10 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-app.use('/', function(req, res, next) {
-	res.status(200).json({
-		msg: "Hello world"
-	});
+app.get('/', function(req, res, next) {
+	res.render('index');
 });
 app.use('/users', users);
 app.use('/bids', bids);
@@ -38,9 +37,10 @@ app.use('/talents', talents);
 app.use('/threads', threads);
 app.use('*', function(req, res, next) {
 	res.status(404).json({
-		msg: "Not Found"
+		status: 'fail',
+		result: "Not Found"
 	});
-})
+});
 
 app.use(function (err, req, res, next) {
 	console.error(err);

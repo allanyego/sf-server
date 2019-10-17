@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.topnav {
+  display: flex;
+  justify-content: center;
 }
 
-a {
-  color: #00B7FF;
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#features .card {
+  min-height: 19.5em;
+}
+
+.card .fas {
+  font-size: 4em;
+  margin: .2em auto;
+}
+
+.note {
+  padding: .75em !important;
+}
+
+.jumbo .fas, footer .fas {
+  font-size: 1.5em;
+}
+
+footer {
+  padding: .7em 0;
 }

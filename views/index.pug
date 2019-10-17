@@ -1,0 +1,14 @@
+extends ./layout
+
+block content
+    include ./includes/jumbo
+
+    section(class="row")
+        article(class="col m1-1 _primary")
+            div(class="card")
+                div(class="-content")
+                    button(class="accordion _box _shadow _dark") /talents
+                    div(class="-panel")
+                        p Hello this is one more accordion. Very useful for creating process based or choice based stuff.
+
+    include ./includes/features
