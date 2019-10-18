@@ -1,6 +1,10 @@
-.topnav {
-  display: flex;
-  justify-content: center;
+header {
+  padding-top: .3em;
+  height: 3em;
+}
+h1 {
+  text-align: center;
+  font-size: 2em !important;
 }
 
 .row {
@@ -9,11 +13,32 @@
   justify-content: center;
 }
 
+.route-list {
+  padding: .7em;
+}
+
+.route-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.route-item button {
+  margin-right: 1em;
+}
+
+.route {
+  width: 30%;
+}
+
+.fas.fa-spinner {
+  animation: spin 1s infinite linear;
+}
+
 #features .card {
   min-height: 19.5em;
 }
 
-.card .fas {
+#features .fas {
   font-size: 4em;
   margin: .2em auto;
 }
@@ -28,4 +53,29 @@
 
 footer {
   padding: .7em 0;
+}
+
+.xGET {
+  color: rgb(144,238,144);
+}
+
+.xPOST {
+  color: rgb(44,62,80);
+}
+
+.xPUT {
+  color: rgb(255,152,0);
+}
+
+.xDELETE {
+  color: rgb(244,67,54);
+}
+
+@-webkit-keyframes spin {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
 }

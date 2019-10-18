@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.get('/', function(req, res, next) {
-	res.render('index');
+	res.render('index', require('./lib/route-list'));
 });
 app.use('/users', users);
 app.use('/bids', bids);

@@ -4,13 +4,28 @@ block content
     include ./includes/jumbo
 
     section(class="row")
-        article(class="col m1-1 _primary")
-            div(class="card")
-                div(class="-content")
-                    button(class="accordion _box _shadow _dark") /talents
-                    div(class="-panel _f-dark")
-                        ul
-                            li GET /
-                                a(class="button") Try it
+        each route in routes
+            article(class="col m1-1 _primary")
+                div(class="card _cream")
+                    div(class="-content") 
+                        button(class="accordion _box _shadow _dark") #{route.endpoint}
+                        div(class="-panel")
+                            section(class="route-list _f-black")
+                                each end in route.children
+                                    - var notForNow = end.method === 'POST' || end.method === 'PUT' || end.method === 'DELETE';
+                                    article(
+                                        class=`route-item ${notForNow ? '_noReaction' : ''}`
+                                    )
+                                        div(class="route")
+                                            strong
+                                                span(class=`x${end.method}`) #{end.method + " "}
+                                                | #{end.url}
+                                        div
+                                            button(
+                                                class="_small", data-method=`${end.method}`, 
+                                                data-url=`/${route.endpoint+end.url}`) Try it
+    include ./includes/response-modal
+
+    include ./includes/my-snack
 
     include ./includes/features

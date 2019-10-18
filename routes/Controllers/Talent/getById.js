@@ -7,6 +7,12 @@ module.exports = function(req, res, next) {
 	query.then(
 		onTalentFound,
 		function(err) {
+			if (err.name === 'CastError') {
+				return res.status(400).json({
+					status: 'fail',
+					result: 'Missing/invalid id format.'
+				})
+			}
 			next(err);
 		}
 	);

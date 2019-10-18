@@ -42,11 +42,20 @@ server.on('listening', onListening);
 /* /**
  * Mongoose connection
  */
-const connectMongo = async () => {
+const connectMongo = async function R() {
+  let retries = 1;
   try {
     await mongoose.connect(mongoUri, {useNewUrlParser: true});
   } catch(err) {
-    console.log("Mongoose error:", err);
+    while(retries < 3) {
+      try {
+        R();
+      } catch(error) {
+        console.log('Error on retry %s\n', retries, 'Error:', error.message);
+      }
+    }
+
+    console.log("Mongoose error after 3 retries:", err);
     throw err;
   }
 };
